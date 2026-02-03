@@ -93,12 +93,12 @@ sequenceDiagram
     NET->>S: Network packets
     S->>EVE: Event logs
     
-    Note over EVE,ES: Log Streaming
+    
     EVE->>LS: File monitoring
     LS->>ES: Bulk ingestion
     
     Note over NET,RD: ML Detection
-    NET->>FE: Raw packets
+    EVE->>FE: Flows 
     FE->>RD: Features 
     RD->>RD: Prediction 
     RD->>ES: Results
